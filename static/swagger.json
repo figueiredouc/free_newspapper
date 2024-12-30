@@ -1,0 +1,56 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "HTML Fetcher API",
+      "description": "An API to fetch and process HTML content from URLs.",
+      "version": "1.0.0"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "paths": {
+      "/fetch-html": {
+        "post": {
+          "summary": "Fetch HTML",
+          "description": "Given a URL, fetch and process its HTML content and return it.",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "url",
+              "required": true,
+              "description": "The URL to fetch.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "The target URL."
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The processed HTML content",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "html": {
+                    "type": "string",
+                    "description": "The prettified HTML content"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad request"
+            },
+            "415": {
+              "description": "Unsupported Media Type"
+            }
+          }
+        }
+      }
+    }
+  }
+  
