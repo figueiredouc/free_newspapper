@@ -1,0 +1,6 @@
+flask            
+beautifulsoup4
+flask-cors
+flask-swagger-ui
+flask-apispec
+
